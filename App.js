@@ -7,6 +7,9 @@ import {
   TouchableOpacity,
 } from "react-native";
 import { Header } from "react-native-elements";
+import db from "./localdb"
+
+console.log(db["the"].chunks)
 
 export default class App extends React.Component {
   constructor(){
