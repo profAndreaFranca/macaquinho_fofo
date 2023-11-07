@@ -9,7 +9,7 @@ import {
 import { Header } from "react-native-elements";
 import db from "./db_1.json"
 
-console.log(db["the"].chunks)
+//console.log(db["the"].chunks)
 
 export default class App extends React.Component {
   constructor(){
@@ -27,7 +27,7 @@ export default class App extends React.Component {
           backgroundColor={"#9c8210"}
           centerComponent={{
             text:"Macaquinho Fofo",
-            style:{color:"#fff",fontSize:20}
+            style:{color:"#fff",fontSize:30}
           }}
         />
 
@@ -44,11 +44,17 @@ export default class App extends React.Component {
         </TouchableOpacity>
       <View>
     {this.state.chunks.map(item=>{
+      return(
+        <TouchableOpacity>
+  <Text style={styles.displayText}>{item}</Text>
+        </TouchableOpacity>
+      )
       
+
     })}
       
       </View>
-        <Text style={styles.displayText}>{this.state.displayText}</Text>
+      
       </View>
     );
   }
