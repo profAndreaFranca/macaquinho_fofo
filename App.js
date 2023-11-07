@@ -5,6 +5,7 @@ import {
   View,
   TextInput,
   TouchableOpacity,
+  Image,
 } from "react-native";
 import { Header } from "react-native-elements";
 import db from "./db_1.json"
@@ -27,10 +28,16 @@ export default class App extends React.Component {
           backgroundColor={"#9c8210"}
           centerComponent={{
             text:"Macaquinho Fofo",
-            style:{color:"#fff",fontSize:30}
+            style:{color:"#fff",fontSize:25}
           }}
         />
-
+        <Image style= {
+          styles.imageIcon
+        }
+        source = {
+          require ('./assets/faceMonkey.png')
+        }
+        />
         <TextInput 
           style={styles.inputBox}
           onChangeText={text=>{this.setState({text:text})}}
@@ -90,5 +97,10 @@ const styles = StyleSheet.create({
   displayText: {
     textAlign: 'center',
     fontSize: 30,
+  },
+  imageIcon:{
+    height: 150,
+    width: 150,
+    alignSelf: 'center',
   },
 });
