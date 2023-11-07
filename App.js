@@ -7,7 +7,7 @@ import {
   TouchableOpacity,
 } from "react-native";
 import { Header } from "react-native-elements";
-import db from "./localdb"
+import db from "./db_1.json"
 
 console.log(db["the"].chunks)
 
@@ -16,7 +16,8 @@ export default class App extends React.Component {
     super()
     this.state={
       text:"",
-      displayText:""
+      displayText:"",
+      chunks:[]
     }
   }
   render() {
@@ -37,11 +38,16 @@ export default class App extends React.Component {
 
         <TouchableOpacity
           style={styles.goButton}
-          onPress={()=>{this.setState({displayText:this.state.text})}}
+          onPress={()=>{this.setState({chunks:db[this.state.text].chunks})}}
         >
           <Text style={styles.buttonText}>GO</Text>
         </TouchableOpacity>
-
+      <View>
+    {this.state.chunks.map(item=>{
+      
+    })}
+      
+      </View>
         <Text style={styles.displayText}>{this.state.displayText}</Text>
       </View>
     );
@@ -62,7 +68,6 @@ const styles = StyleSheet.create({
     height: 40,
     textAlign: 'center',
     borderWidth: 4,
-    outline: 'none',
   },
   goButton: {
     width: '50%',
