@@ -14,16 +14,13 @@ import PhonicButton from "./components/PhonicButton";
 console.log(db["the"].chunks)
 
 export default class App extends React.Component {
-  //construtor
-  constructor() {
-    super();
-    //estados
-    this.state = {
-      text: "",
-      displayText: "",
-      chunks: [],
-      phones:[]
-    };
+  constructor(){
+    super()
+    this.state={
+      text:"",
+      displayText:"",
+      chunks:[]
+    }
   }
   render() {
     return (
@@ -54,16 +51,19 @@ export default class App extends React.Component {
         >
           <Text style={styles.buttonText}>GO</Text>
         </TouchableOpacity>
-        <View>
-          {this.state.chunks.map((item, index) => {
-            return (
-              <PhonicButton
-                wordChunk={item}
-               wordPhone = {this.state.phones[index]}
-              />
-            );
-          })}
-        </View>
+      <View>
+    {this.state.chunks.map(item=>{
+      return(
+        <TouchableOpacity>
+  <Text style={styles.displayText}>{item}</Text>
+        </TouchableOpacity>
+      )
+      
+
+    })}
+      
+      </View>
+      
       </View>
     );
   }
@@ -72,9 +72,7 @@ export default class App extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#fff",
-    // alignItems: "center",
-    // justifyContent: "center",
+    backgroundColor: "#b8b2a3",
   },
   inputBox: {
     marginTop: 20,
