@@ -47,7 +47,12 @@ export default class App extends React.Component {
         <TouchableOpacity
           style={styles.goButton}
           onPress={() => {
-            this.setState({ chunks: db[this.state.text].chunks,phones: db[this.state.text].phones })
+            var word = this.state.text.toLowerCase().trim()
+            db[word]
+            ? 
+            this.setState({ chunks: db[word].chunks,phones: db[word].phones })
+            :
+            alert("Palavra não encontrada em nosso banco de dados")
           }}
         >
           <Text style={styles.buttonText}>GO</Text>
