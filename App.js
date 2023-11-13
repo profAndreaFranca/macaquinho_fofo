@@ -52,7 +52,7 @@ export default class App extends React.Component {
             ? 
             this.setState({ chunks: db[word].chunks,phones: db[word].phones })
             :
-            alert("Palavra não encontrada em nosso banco de dados")
+            alert("Palavra não encontrada em nosso banco de dados, ou não existe")
           }}
         >
           <Text style={styles.buttonText}>GO</Text>
