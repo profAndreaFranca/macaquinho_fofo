@@ -19,7 +19,8 @@ export default class App extends React.Component {
     this.state={
       text:"",
       displayText:"",
-      chunks:[]
+      chunks:[],
+      phones : []
     }
   }
   render() {
@@ -52,11 +53,12 @@ export default class App extends React.Component {
           <Text style={styles.buttonText}>GO</Text>
         </TouchableOpacity>
       <View>
-    {this.state.chunks.map(item=>{
+    {this.state.chunks.map((item,index)=>{
       return(
-        <TouchableOpacity>
-  <Text style={styles.displayText}>{item}</Text>
-        </TouchableOpacity>
+        <PhonicButton 
+          wordChunk = {item}
+          workPhone = {this.state.phones[index]}
+        />
       )
       
 
