@@ -63,13 +63,12 @@ export default class App extends React.Component {
         <PhonicButton 
           wordChunk = {item}
           workPhone = {this.state.phones[index]}
+          buttonIndex = {index}
         />
       )
       
 
     })}
-      
-      </View>
       
       </View>
     );
