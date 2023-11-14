@@ -42,6 +42,7 @@ export default class App extends React.Component {
           onChangeText={(text) => {
             this.setState({ text: text });
           }}
+          value={this.state.text}
         />
 
         <TouchableOpacity
@@ -50,7 +51,11 @@ export default class App extends React.Component {
             var word = this.state.text.toLowerCase().trim()
             db[word]
               ?
-              this.setState({ chunks: db[word].chunks, phones: db[word].phones })
+              this.setState({ 
+                chunks: db[word].chunks, 
+                phones: db[word].phones,
+                text:"" 
+              })
               :
               alert("Palavra não encontrada em nosso banco de dados, ou não existe")
           }}
@@ -63,6 +68,7 @@ export default class App extends React.Component {
               <PhonicButton
                 wordChunk={item}
                 workPhone={this.state.phones[index]}
+                buttonIndex = {index}
               />
             )
 
