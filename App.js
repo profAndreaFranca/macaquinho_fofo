@@ -14,13 +14,13 @@ import PhonicButton from "./components/PhonicButton";
 console.log(db["the"].chunks)
 
 export default class App extends React.Component {
-  constructor(){
+  constructor() {
     super()
-    this.state={
-      text:"",
-      displayText:"",
-      chunks:[],
-      phones : []
+    this.state = {
+      text: "",
+      displayText: "",
+      chunks: [],
+      phones: []
     }
   }
   render() {
@@ -49,27 +49,28 @@ export default class App extends React.Component {
           onPress={() => {
             var word = this.state.text.toLowerCase().trim()
             db[word]
-            ? 
-            this.setState({ chunks: db[word].chunks,phones: db[word].phones })
-            :
-            alert("Palavra não encontrada em nosso banco de dados, ou não existe")
+              ?
+              this.setState({ chunks: db[word].chunks, phones: db[word].phones })
+              :
+              alert("Palavra não encontrada em nosso banco de dados, ou não existe")
           }}
         >
           <Text style={styles.buttonText}>GO</Text>
         </TouchableOpacity>
-      <View>
-    {this.state.chunks.map((item,index)=>{
-      return(
-        <PhonicButton 
-          wordChunk = {item}
-          workPhone = {this.state.phones[index]}
-          buttonIndex = {index}
-        />
-      )
-      
+        <View>
+          {this.state.chunks.map((item, index) => {
+            return (
+              <PhonicButton
+                wordChunk={item}
+                workPhone={this.state.phones[index]}
+              />
+            )
 
-    })}
-      
+
+          })}
+
+        </View>
+
       </View>
     );
   }
