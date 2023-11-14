@@ -27,7 +27,12 @@ export default class PhonicButton extends React.Component{
               
               }
             >
-                <Text style={styles.displayText}>{this.props.wordChunk}</Text>
+                <Text style={this.props.buttonIndex == this.state.pressedButtonIndex?
+               [styles.displayText, {color: "red"}]:
+               [styles.displayText, {color: "white"}]
+              }>
+                  {this.props.wordChunk}
+                  </Text>
 
             </TouchableOpacity>
             
