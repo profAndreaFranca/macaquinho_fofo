@@ -3,6 +3,12 @@ import {Text,TouchableOpacity, StyleSheet} from 'react-native'
 import{Audio} from 'expo-av'
 
 export default class PhonicButton extends React.Component{
+  constructor(){
+    super()
+    this.state = {
+      pressedButtonIndex = ""
+    }
+  }
   PlaySound = async(soundChunk)=>{
     var  soundLink = "https://s3-whitehatjrcontent.whjr.online/phones/"+ soundChunk +".mp3"
     await Audio.Sound.createAsync({uri: soundLink}, {shouldPlay: true})
