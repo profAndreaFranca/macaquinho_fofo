@@ -28,39 +28,18 @@ export default class PhonicButton extends React.Component{
 
 }
 
-const styles = StyleSheet.create({
-    container: {
-      flex: 1,
-      backgroundColor: "#fff",
-    },
-    inputBox: {
-      marginTop: 20,
-      width: "80%",
-      alignSelf: "center",
-      height: 40,
-      textAlign: "center",
-      borderWidth: 4,
-    },
-    goButton: {
-      width: "50%",
-      height: 55,
-      alignSelf: "center",
-      padding: 10,
-      margin: 10,
-    },
-    buttonText: {
-      textAlign: "center",
-      fontSize: 30,
-      fontWeight: "bold",
-    },
+const styles = StyleSheet.create({ 
     displayText: {
       textAlign: "center",
       fontSize: 30,
     },
-    imageIcon: {
-      height: 150,
-      width: 150,
-      alignSelf: "center",
-    },
+    chunkButton:{
+      width:'70%',
+      height: 50 ,
+      justifyContent: 'center' ,
+      alignItems: 'center' ,
+      borderRadius: 10
+    }
+   
   });
   
